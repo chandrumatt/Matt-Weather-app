@@ -1,15 +1,46 @@
 {
-    "short_name": "Weather App",
-    "name": "Weather App PWA",
-    "icons": [
-        {
-            "src": "/images/logo.png",
-            "type": "image/png",
-            "sizes": "1024x1024"
-        }
-    ],
-    "start_url": ".",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+  "short_name": "Matt-Weather App",
+  "name": "Matt-Weather App",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64 32x32 24x24 16x16"
+    },
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/images/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/maskable.png.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/logo384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/images/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }

@@ -1,0 +1,86 @@
+.contact-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+}
+
+.contact-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Image styles */
+.contact-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Contact info section */
+.contact-info {
+  flex: 1;
+}
+
+/* Form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button */
+.contact-button {
+  padding: 10px 20px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-button:hover {
+  background-color: #0052cc;
+}
+
+/* ✅ Mobile Responsive Styles for Screens ≤ 320px */
+@media (max-width: 320px) {
+  .contact-content {
+    flex-direction: column; /* Stack image and text */
+    gap: 15px;
+    text-align: center;
+  }
+  .contact-content img {
+    width: 100px;
+  }
+
+  .contact-image {
+    width: 100%; /* Make image responsive */
+    max-width: 250px; /* Prevent it from being too large */
+    margin: 0 auto; /* Center align */
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-input {
+    font-size: 14px; /* Smaller font */
+    padding: 8px;
+  }
+
+  .contact-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

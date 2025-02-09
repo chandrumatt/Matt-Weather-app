@@ -1,42 +1,60 @@
-import React, { useState } from 'react';
-
-import { fetchWeather } from './api/fetchWeather';
-import './App.css';
+import React, { useState } from "react";
+import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { fetchWeather } from "./api/fetchWeather";
+// import WeatherComponent from "./components/Weather";
+import "./App.css";
+import Contact from "./Contact";
+import Weather from "./Weather";
 
 const App = () => {
-    const [query, setQuery] = useState('');
-    const [weather, setWeather] = useState({});
-    
-    const search = async (e) => {
-        if(e.key === 'Enter') {
-            const data = await fetchWeather(query);
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
 
-            setWeather(data);
-            setQuery('');
-        }
+  const search = async (e) => {
+    if (e.key === "Enter") {
+      const data = await fetchWeather(query);
+      setWeather(data);
+      setQuery("");
     }
+  };
 
-    return (
-        <div className="main-container">
-            <input type="text"className="search"placeholder="Search..."value={query}onChange={(e) => setQuery(e.target.value)}onKeyPress={search}/>
-            {weather.main && (
-                <div className="city">
-                    <h2 className="city-name">
-                        <span>{weather.name}</span>
-                        <sup>{weather.sys.country}</sup>
-                    </h2>
-                    <div className="city-temp">
-                        {Math.round(weather.main.temp)}
-                        <sup>&deg;C</sup>
-                    </div>
-                    <div className="info">
-                        <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
-                        <p>{weather.weather[0].description}</p>
-                    </div>
-                </div>
+  return (
+    <Router>
+      <div>
+        <nav className="nav-container">
+          <div className="logo">
+            <img src="/images/logo.png" alt="logo" />
+            <h1 style={{ color: "white", paddingLeft: "5pxj" }}>
+              Matt-Engineering-solutions{" "}
+            </h1>
+          </div>
+          <Link to="/" className="nav-link">
+            Weather
+          </Link>
+          <Link to="/contact" className="nav-link">
+            Contact
+          </Link>
+        </nav>
+
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Weather
+                {...props}
+                query={query}
+                setQuery={setQuery}
+                weather={weather}
+                search={search}
+              />
             )}
-        </div>
-    );
-}
+          />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
