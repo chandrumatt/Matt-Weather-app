@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { fetchWeather } from "./api/fetchWeather";
-// import WeatherComponent from "./components/Weather";
 import "./App.css";
 import Contact from "./Contact";
 import Weather from "./Weather";
@@ -24,8 +23,8 @@ const App = () => {
         <nav className="nav-container">
           <div className="logo">
             <img src="/images/logo.png" alt="logo" />
-            <h1 style={{ color: "white", paddingLeft: "5pxj" }}>
-              Matt-Engineering-solutions{" "}
+            <h1 style={{ color: "white", paddingLeft: "5px" }}>
+              Matt-Engineering-Solutions
             </h1>
           </div>
           <Link to="/" className="nav-link">
@@ -36,22 +35,20 @@ const App = () => {
           </Link>
         </nav>
 
-        <Switch>
+        <Routes>
           <Route
-            exact
             path="/"
-            render={(props) => (
+            element={
               <Weather
-                {...props}
                 query={query}
                 setQuery={setQuery}
                 weather={weather}
                 search={search}
               />
-            )}
+            }
           />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </Router>
   );

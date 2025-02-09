@@ -1,9 +1,13 @@
 import React from "react";
 import "./App.css";
+// import bgImage from "./../public/images/bg.jpg";
 
 const Weather = ({ query, setQuery, weather, search }) => {
   return (
-    <div className="main-container">
+    <div
+      className="main-container"
+      style={{ backgroundImage: "url(/images/bg-2.png)" }}
+    >
       <input
         type="text"
         className="search"
