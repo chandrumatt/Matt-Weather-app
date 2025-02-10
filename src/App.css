@@ -131,6 +131,50 @@ p {
   color: lightgray;
 }
 
+@media (max-width: 520px) {
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  .logo {
+    position: static; /* Ensure proper alignment */
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center; /* Align logo text & image */
+  }
+
+  .logo img {
+    width: 30px; /* Slightly larger than for 320px */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 8px; /* Space between logo image and text */
+  }
+
+  .logo h1 {
+    font-size: 18px; /* Increase text size for better visibility */
+    padding-left: 5px;
+  }
+
+  .nav-link {
+    font-size: 16px; /* Slightly larger font for readability */
+    margin: 8px 0; /* More spacing for better touch interaction */
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .nav-link a {
+    padding: 8px 12px; /* Increase padding for better touch */
+    display: block;
+    width: 100%; /* Make links full width for easy tapping */
+    text-align: center;
+  }
+}
+
 /* ✅ Mobile Responsive Styles for Screens <= 320px */
 @media (max-width: 320px) {
   .nav-container {
@@ -157,3 +201,5 @@ p {
     margin: 5px 0; /* Space links for better touch interaction */
   }
 }
+
+/* ✅ Mobile Responsive Styles for Screens <= 520px */

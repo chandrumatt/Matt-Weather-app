@@ -84,3 +84,33 @@
     padding: 8px 15px;
   }
 }
+
+@media (max-width: 520px) {
+  .contact-content {
+    flex-direction: column !important;
+    gap: 15px !important;
+    text-align: center !important;
+  }
+
+  .contact-image {
+    width: 100% !important;
+    max-width: 200px !important;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    text-align: center !important;
+  }
+
+  .contact-input {
+    font-size: 14px !important;
+    padding: 8px !important;
+  }
+
+  .contact-button {
+    font-size: 14px !important;
+    padding: 8px 15px !important;
+  }
+}
